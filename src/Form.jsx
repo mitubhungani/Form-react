@@ -57,7 +57,7 @@ const Form = () => {
   return (
     <>
       {submited ? (
-        <video id="video1" autoPlay width="420">
+        <video id="video1" autoPlay width="100%" className="fixed">
           <source src="./video/meme2.mp4" />
         </video>
       ) : (
@@ -65,7 +65,7 @@ const Form = () => {
       )}
 
       {not ? (
-        <video id="video1" autoPlay width="420">
+        <video id="video1" autoPlay width="100%" className="fixed">
           <source src="./video/meme3.mp4" />
         </video>
       ) : (
