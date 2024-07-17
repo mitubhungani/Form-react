@@ -8,6 +8,7 @@ const Form = () => {
     username: "",
     email: "",
     password: "",
+    copassword: "",
   });
 
   const inputdata = (e) => {
@@ -24,7 +25,7 @@ const Form = () => {
     if (
       userinfo.username.length > 0 &&
       userinfo.email.length > 0 &&
-      userinfo.password.length > 0
+      userinfo.password.length > 0 && userinfo.copassword == userinfo.password
     ) {
       toast.success("🦄 Wow so easy!", {
         position: "top-center",
@@ -74,11 +75,11 @@ const Form = () => {
       <ToastContainer />
       <div className=" h-screen p-1">
         <form onSubmit={check} className="w-1/4 mx-auto my-40 flex flex-col">
-          <h1 className="text-black text-6xl font-bold text-center">Form</h1>
+          <h1 className="text-black text-4xl font-bold text-center mb-6">Sign Up</h1>
           <input
             type="text"
             className="m-2 p-2 rounded-lg focus:outline-none border-4"
-            placeholder="name"
+            placeholder="username"
             name="username"
             onChange={inputdata}
           />
@@ -94,6 +95,13 @@ const Form = () => {
             className="m-2 p-2 rounded-lg focus:outline-none border-4"
             placeholder="password"
             name="password"
+            onChange={inputdata}
+          />
+          <input
+            type="password"
+            className="m-2 p-2 rounded-lg focus:outline-none border-4"
+            placeholder="confirm password"
+            name="copassword"
             onChange={inputdata}
           />
           <input
